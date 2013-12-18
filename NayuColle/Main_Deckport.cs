@@ -59,7 +59,7 @@ namespace NayuColle
                         MissionTimeLabel[item.index - 1].Text = "0" + (int)Nokori[item.index - 1].TotalHours + Nokori[item.index - 1].ToString(@"\:mm\:ss");
  
                     if (Nokori[item.index - 1].TotalSeconds < 60)
-                        MissionTimeLabel[item.index - 1].BackColor = Color.Red;   
+                        MissionTimeLabel[item.index - 1].BackColor = Color.Orange;   
                 }
 
             }
