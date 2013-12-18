@@ -1,1 +1,13 @@
 C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\bin\Debug\NayuColle.exe.config
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\bin\Debug\NayuColle.exe
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\bin\Debug\NayuColle.pdb
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\bin\Debug\DynamicJson.dll
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\bin\Debug\FiddlerCore4.dll
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\bin\Debug\FiddlerCore4.xml
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\obj\Debug\NayuColle.csprojResolveAssemblyReference.cache
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\obj\Debug\NayuColle.Alert.resources
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\obj\Debug\NayuColle.Main.resources
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\obj\Debug\NayuColle.Properties.Resources.resources
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\obj\Debug\NayuColle.csproj.GenerateResource.Cache
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\obj\Debug\NayuColle.exe
+C:\Users\hiroki\Documents\Visual Studio 2013\Projects\NayuColle\NayuColle\obj\Debug\NayuColle.pdb

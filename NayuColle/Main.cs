@@ -54,20 +54,14 @@ namespace NayuColle
             for (int i = 0; i < Constants.FLEET_MAX; i++)
                 fleet[i] = new Fleet();
 
-            ship3.Columns.Add("api_id");
-            ship3.Columns.Add("api_ship_id");
-            ship3.Columns.Add("api_cond");
-            ship3.Columns.Add("api_nowhp");
-            ship3.Columns.Add("api_maxhp");
-            ship3.Columns.Add("api_exp");
-            ship3.Columns.Add("api_lv");
-            ds.Tables.Add(ship3);
-            ship3.TableName = "ship3";
+            Init_Member_ShipTable();
 
 
             ReadFileToDic("kanmusu.csv", Kanmusu_Dic);
             //  ReadFileToDic("exp_point.csv", Exp_Dic);
         }
+
+
 
         void FiddlerApplication_BeforeRequest(Fiddler.Session oSession)
         {
@@ -167,7 +161,7 @@ namespace NayuColle
                         {
                             KanmusuCurrent.Text = loop.ToString();
                         }));
-                        MakeShip2_Table(ship_data);
+                        Make_Member_ShipTable(ship_data);
                         Invoke(new UpdateUI_JSON(UpdateDeck), deck_data);
                     }
 
@@ -181,7 +175,7 @@ namespace NayuColle
                         {
                             KanmusuCurrent.Text = loop.ToString();
                         }));
-                        MakeShip2_Table(ship_data);
+                        Make_Member_ShipTable(ship_data);
                         Invoke(new UpdateUI_JSON(UpdateDeck), deck_data);
                     }
 

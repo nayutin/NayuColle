@@ -99,6 +99,7 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="member\member_basic.cs" />
+    <Compile Include="Member_Ship.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Alert.resx">
