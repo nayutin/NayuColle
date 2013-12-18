@@ -1,0 +1,12 @@
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\bin\Release\FCSample.exe.config
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\bin\Release\FCSample.exe
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\bin\Release\FCSample.pdb
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\bin\Release\DynamicJson.dll
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\bin\Release\FiddlerCore4.dll
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\bin\Release\FiddlerCore4.xml
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\obj\Release\FCSample.Properties.Resources.resources
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\obj\Release\FCSample.csproj.GenerateResource.Cache
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\obj\Release\FCSample.exe
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\obj\Release\FCSample.pdb
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\obj\Release\FCSample.Alert.resources
+C:\Users\hiroki\documents\visual studio 2013\Projects\FCSample\FCSample\obj\Release\FCSample.Main.resources
