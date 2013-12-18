@@ -12,6 +12,19 @@ namespace NayuColle
     {
         DataTable ship3 = new DataTable();
 
+        private void Init_Member_ShipTable()
+        {
+            ship3.Columns.Add("api_id");
+            ship3.Columns.Add("api_ship_id");
+            ship3.Columns.Add("api_cond");
+            ship3.Columns.Add("api_nowhp");
+            ship3.Columns.Add("api_maxhp");
+            ship3.Columns.Add("api_exp");
+            ship3.Columns.Add("api_lv");
+            ds.Tables.Add(ship3);
+            ship3.TableName = "ship3";
+        }
+
         void Make_Member_ShipTable(dynamic ship3_data)
         {
 
@@ -31,17 +44,6 @@ namespace NayuColle
             }
         }
 
-        private void Init_Member_ShipTable()
-        {
-            ship3.Columns.Add("api_id");
-            ship3.Columns.Add("api_ship_id");
-            ship3.Columns.Add("api_cond");
-            ship3.Columns.Add("api_nowhp");
-            ship3.Columns.Add("api_maxhp");
-            ship3.Columns.Add("api_exp");
-            ship3.Columns.Add("api_lv");
-            ds.Tables.Add(ship3);
-            ship3.TableName = "ship3";
-        }
+        
     }
 }
