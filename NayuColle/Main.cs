@@ -58,7 +58,6 @@ namespace NayuColle
 
 
             ReadFileToDic("kanmusu.csv", Kanmusu_Dic);
-            //  ReadFileToDic("exp_point.csv", Exp_Dic);
         }
 
 

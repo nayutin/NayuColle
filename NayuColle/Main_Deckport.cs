@@ -49,11 +49,12 @@ namespace NayuColle
             foreach (var item in MissionTime.Select((value, index) => new { value, index }))
             {
                 if (item.index == 0) continue;
-                if (item.value < Now)
+                Nokori[item.index - 1] = item.value - Now;
+                if (item.value <= Now)
                 {
                     MissionTimeLabel[item.index - 1].Text = "00:00:00";
                      MissionTimeLabel[item.index - 1].BackColor = Color.Transparent;
-                    if (Alert_Flag[item.index] == 0)
+                    if (Alert_Flag[item.index] == 0 && item.value.Year != 1970)
                     {
                         Alert_Flag[item.index] = 1;
                         MissionEndAlert();
@@ -63,7 +64,6 @@ namespace NayuColle
                 else
                 {
                     Alert_Flag[item.index] = 0;
-                    Nokori[item.index - 1] = item.value - Now;
                     if (Nokori[item.index - 1].TotalHours > 10)
                         MissionTimeLabel[item.index - 1].Text = (int)Nokori[item.index - 1].TotalHours + Nokori[item.index - 1].ToString(@"\:mm\:ss");
                     else
