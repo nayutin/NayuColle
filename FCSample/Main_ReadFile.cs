@@ -9,7 +9,6 @@ namespace FCSample
     public partial class Main
     {
         Dictionary<int, string> Kanmusu_Dic = new Dictionary<int, string>();
-        //  Dictionary<int, string> Exp_Dic = new Dictionary<int, string>();
 
         void ReadFileToDic(string file, Dictionary<int, string> dic)
         {

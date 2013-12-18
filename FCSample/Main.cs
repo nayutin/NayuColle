@@ -80,6 +80,7 @@ namespace FCSample
         {
             if (oSession.isFlagSet(Fiddler.SessionFlags.Ignored))
                 return;
+
             string url = oSession.fullUrl;
             try
             {
