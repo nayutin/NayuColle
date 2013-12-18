@@ -61,16 +61,18 @@ namespace NayuColle
                             fleet[item.api_id - 1].exp[ship.index] = exp;
 
                         }
-                        else
-                        {
-                            fleet[(int)item.api_id - 1].kanmusu[ship.index] = "";
-                            fleet[(int)item.api_id - 1].cond[ship.index] = 0;
-                            fleet[(int)item.api_id - 1].maxhp[ship.index] = 0;
-                            fleet[(int)item.api_id - 1].nowhp[ship.index] = 0;
-                            fleet[item.api_id - 1].lv[ship.index] = 0;
-                            fleet[item.api_id - 1].exp[ship.index] = 0;
-                        }
+
                     }
+                    else
+                    {
+                        fleet[(int)item.api_id - 1].kanmusu[ship.index] = "";
+                        fleet[(int)item.api_id - 1].cond[ship.index] = 0;
+                        fleet[(int)item.api_id - 1].maxhp[ship.index] = 0;
+                        fleet[(int)item.api_id - 1].nowhp[ship.index] = 0;
+                        fleet[item.api_id - 1].lv[ship.index] = 0;
+                        fleet[item.api_id - 1].exp[ship.index] = 0;
+                    }
+                    
                 }
 
             }
