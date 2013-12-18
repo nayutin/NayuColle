@@ -16,6 +16,11 @@ namespace NayuColle
 
         private static int[] Alert_Flag = {-1,-1,-1,-1};
 
+
+        /// <summary>
+        /// JSONから取得した遠征の時間をパースする
+        /// </summary>
+        /// <param name="json">JSONデータ</param>
         void ParseMission(dynamic json)
         {
             foreach (var item in ((member_deck[])json.api_data)
@@ -28,6 +33,12 @@ namespace NayuColle
             }
         }
 
+
+        /// <summary>
+        /// 遠征時間の更新をする
+        /// 遠征終了時にダイアログ表示
+        /// 1分以内になれば時間の背景を黄色に
+        /// </summary>
         void UpdateMission()
         {
            
@@ -65,7 +76,9 @@ namespace NayuColle
             }
 
         }
-
+        /// <summary>
+        /// ダイアログを表示する関数
+        /// </summary>
         private void MissionEndAlert()
         {
             Alert Alrt = new Alert();
