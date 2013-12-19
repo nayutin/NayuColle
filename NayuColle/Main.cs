@@ -59,8 +59,6 @@ namespace NayuColle
 
             var read = new ReadFile { file = "kanmusu.csv", Dic = Kanmusu_Dic };
             read.ReadFileToDic();
-
-            Console.WriteLine("ok");
         }
 
         /// <summary>
