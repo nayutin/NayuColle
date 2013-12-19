@@ -55,13 +55,14 @@ namespace NayuColle
                 fleet[i] = new Fleet();
 
             Init_Member_ShipTable();
-
-
             ReadFileToDic("kanmusu.csv", Kanmusu_Dic);
         }
 
-
-
+        /// <summary>
+        /// URLフィルタ
+        /// 必要のないURLにIgroneフラグを立てる
+        /// </summary>
+        /// <param name="oSession"></param>
         void FiddlerApplication_BeforeRequest(Fiddler.Session oSession)
         {
             string url = oSession.fullUrl;
@@ -71,6 +72,7 @@ namespace NayuColle
 
         void FiddlerApplication_AfterSessionComplete(Fiddler.Session oSession)
         {
+            //ignoreフラグが立っていればリターン
             if (oSession.isFlagSet(Fiddler.SessionFlags.Ignored))
                 return;
 
@@ -216,7 +218,6 @@ namespace NayuColle
                 checkBox2.CheckState = CheckState.Unchecked;
             }
 
-
         }
 
 
@@ -224,9 +225,6 @@ namespace NayuColle
         {
             Fiddler.FiddlerApplication.Shutdown();
         }
-
-
-
 
     }
 }
