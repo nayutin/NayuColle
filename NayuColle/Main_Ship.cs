@@ -10,29 +10,36 @@ namespace NayuColle
 {
     public partial class Main
     {
-        DataTable ship3 = new DataTable();
+        DataTable Member_Ship = new DataTable();
 
+        /// <summary>
+        /// 取得している艦娘のテーブルを作成するために、テーブルを初期化する
+        /// </summary>
         private void Init_Member_ShipTable()
         {
-            ship3.Columns.Add("api_id");
-            ship3.Columns.Add("api_ship_id");
-            ship3.Columns.Add("api_cond");
-            ship3.Columns.Add("api_nowhp");
-            ship3.Columns.Add("api_maxhp");
-            ship3.Columns.Add("api_exp");
-            ship3.Columns.Add("api_lv");
-            ds.Tables.Add(ship3);
-            ship3.TableName = "ship3";
+            Member_Ship.Columns.Add("api_id");
+            Member_Ship.Columns.Add("api_ship_id");
+            Member_Ship.Columns.Add("api_cond");
+            Member_Ship.Columns.Add("api_nowhp");
+            Member_Ship.Columns.Add("api_maxhp");
+            Member_Ship.Columns.Add("api_exp");
+            Member_Ship.Columns.Add("api_lv");
+            ds.Tables.Add(Member_Ship);
+            Member_Ship.TableName = "mem_ship";
         }
 
-        void Make_Member_ShipTable(dynamic ship3_data)
+        /// <summary>
+        /// 取得している艦娘のテーブルを作成する。ship2、ship3を取得するたびに何度も書き換えが起こる
+        /// </summary>
+        /// <param name="ship_data"></param>
+        void Make_Member_ShipTable(dynamic ship_data)
         {
 
-            ship3.Clear();
-            foreach (var item in ((member_ship3[])ship3_data)
+            Member_Ship.Clear();
+            foreach (var item in ((member_ship[])ship_data)
                 .Select(p => new { p.api_id, p.api_ship_id, p.api_cond, p.api_nowhp, p.api_maxhp, p.api_exp, p.api_lv }))
             {
-                DataRow row = ship3.NewRow();
+                DataRow row = Member_Ship.NewRow();
                 row[0] = item.api_id;
                 row[1] = item.api_ship_id;
                 row[2] = item.api_cond;
@@ -40,7 +47,7 @@ namespace NayuColle
                 row[4] = item.api_maxhp;
                 row[5] = item.api_exp[1];
                 row[6] = item.api_lv;
-                ship3.Rows.Add(row);
+                Member_Ship.Rows.Add(row);
             }
         }
 

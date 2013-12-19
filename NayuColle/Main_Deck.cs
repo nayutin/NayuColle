@@ -38,7 +38,7 @@ namespace NayuColle
                     if ((double)ship.value > 0)
                     {
                         string filter = "api_id = '" + ship.value + "'";
-                        DataRow[] selectship = ship3.Select(filter);
+                        DataRow[] selectship = Member_Ship.Select(filter);
                         if (selectship.Count() == 1)
                         {
                             var shipid = Convert.ToInt32(selectship[0]["api_ship_id"]);
