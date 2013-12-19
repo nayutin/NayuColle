@@ -12,6 +12,7 @@ namespace NayuColle
     public partial class Main
     {
         DateTime[] MissionTime = new DateTime[Constants.FLEET_MAX];
+        Collection<Label> MissionTimeLabels = new Collection<Label>();
 
         private static int[] Alert_Flag = {-1,-1,-1,-1};
 
@@ -44,9 +45,9 @@ namespace NayuColle
             TimeSpan[] Nokori = new TimeSpan[Constants.FLEET_MAX - 1];
             var Now = System.DateTime.Now;
 
-            this.Labels.Add(Mission1);
-            this.Labels.Add(Mission2);
-            this.Labels.Add(Mission3);
+            this.MissionTimeLabels.Add(Mission1);
+            this.MissionTimeLabels.Add(Mission2);
+            this.MissionTimeLabels.Add(Mission3);
 
             foreach (var item in MissionTime.Select((value, index) => new { value, index }))
             {
@@ -54,8 +55,8 @@ namespace NayuColle
                 Nokori[item.index - 1] = item.value - Now;
                 if (item.value <= Now)
                 {
-                    Labels[item.index - 1].Text = "00:00:00";
-                     Labels[item.index - 1].BackColor = Color.Transparent;
+                    MissionTimeLabels[item.index - 1].Text = "00:00:00";
+                     MissionTimeLabels[item.index - 1].BackColor = Color.Transparent;
                     if (Alert_Flag[item.index] == 0 && item.value.Year != 1970)
                     {
                         Alert_Flag[item.index] = 1;
@@ -67,16 +68,16 @@ namespace NayuColle
                 {
                     Alert_Flag[item.index] = 0;
                     if (Nokori[item.index - 1].TotalHours > 10)
-                        Labels[item.index - 1].Text = (int)Nokori[item.index - 1].TotalHours + Nokori[item.index - 1].ToString(@"\:mm\:ss");
+                        MissionTimeLabels[item.index - 1].Text = (int)Nokori[item.index - 1].TotalHours + Nokori[item.index - 1].ToString(@"\:mm\:ss");
                     else
-                        Labels[item.index - 1].Text = "0" + (int)Nokori[item.index - 1].TotalHours + Nokori[item.index - 1].ToString(@"\:mm\:ss");
+                        MissionTimeLabels[item.index - 1].Text = "0" + (int)Nokori[item.index - 1].TotalHours + Nokori[item.index - 1].ToString(@"\:mm\:ss");
  
                     if (Nokori[item.index - 1].TotalSeconds < 60)
-                        Labels[item.index - 1].BackColor = Color.Orange;   
+                        MissionTimeLabels[item.index - 1].BackColor = Color.Orange;   
                 }
 
             }
-            this.Labels.Clear();
+            this.MissionTimeLabels.Clear();
 
         }
         /// <summary>

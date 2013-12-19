@@ -8,9 +8,6 @@ namespace NayuColle
 {
     public partial class Main
     {
-
-       
-
         void MakeMaterial(dynamic json)
         {
             this.Labels.Add(Material1);

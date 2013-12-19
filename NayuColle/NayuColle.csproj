@@ -71,9 +71,6 @@
     <Compile Include="Main_Material.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main_Ship.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Main_Timer.cs">
       <SubType>Form</SubType>
     </Compile>

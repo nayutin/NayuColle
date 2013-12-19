@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections.ObjectModel;
 
 namespace NayuColle
 {
     public partial class Main
     {
         DateTime[] DockTime = new DateTime[Constants.DOCK_MAX];
+        Collection<Label> DockTimeLabels = new Collection<Label>();
 
         void ParseDock(dynamic json)
         {
@@ -22,10 +24,10 @@ namespace NayuColle
 
         void UpdateDock()
         {
-            this.Labels.Add(Dock1);
-            this.Labels.Add(Dock2);
-            this.Labels.Add(Dock3);
-            this.Labels.Add(Dock4);
+            this.DockTimeLabels.Add(Dock1);
+            this.DockTimeLabels.Add(Dock2);
+            this.DockTimeLabels.Add(Dock3);
+            this.DockTimeLabels.Add(Dock4);
 
             TimeSpan[] Nokori = new TimeSpan[Constants.DOCK_MAX];
 
@@ -35,19 +37,19 @@ namespace NayuColle
 
                 if (DockTime[item.index] < Now)
                 {
-                    Labels[item.index].Text = "00:00:00";
+                    DockTimeLabels[item.index].Text = "00:00:00";
                 }
                 else
                 {
                     Nokori[item.index] = item.value - Now;
                     if (Nokori[item.index].TotalHours > 10)
-                        Labels[item.index].Text = (int)Nokori[item.index].TotalHours + Nokori[item.index].ToString(@"\:mm\:ss");
+                        DockTimeLabels[item.index].Text = (int)Nokori[item.index].TotalHours + Nokori[item.index].ToString(@"\:mm\:ss");
                     else
-                        Labels[item.index].Text = "0" + (int)Nokori[item.index].TotalHours + Nokori[item.index].ToString(@"\:mm\:ss");
+                        DockTimeLabels[item.index].Text = "0" + (int)Nokori[item.index].TotalHours + Nokori[item.index].ToString(@"\:mm\:ss");
                 }
             }
 
-            this.Labels.Clear();
+            this.DockTimeLabels.Clear();
         }
 
     }
