@@ -9,7 +9,6 @@ namespace NayuColle
     public partial class Main
     {
         DateTime[] DockTime = new DateTime[Constants.DOCK_MAX];
-        List<Label> DockTimeLabel = new List<Label>(Constants.DOCK_MAX);
 
         void ParseDock(dynamic json)
         {
@@ -23,6 +22,11 @@ namespace NayuColle
 
         void UpdateDock()
         {
+            this.Labels.Add(Dock1);
+            this.Labels.Add(Dock2);
+            this.Labels.Add(Dock3);
+            this.Labels.Add(Dock4);
+
             TimeSpan[] Nokori = new TimeSpan[Constants.DOCK_MAX];
 
             foreach (var item in DockTime.Select((value, index) => new { value, index }))
@@ -31,17 +35,19 @@ namespace NayuColle
 
                 if (DockTime[item.index] < Now)
                 {
-                    DockTimeLabel[item.index].Text = "00:00:00";
+                    Labels[item.index].Text = "00:00:00";
                 }
                 else
                 {
                     Nokori[item.index] = item.value - Now;
                     if (Nokori[item.index].TotalHours > 10)
-                        DockTimeLabel[item.index].Text = (int)Nokori[item.index].TotalHours + Nokori[item.index].ToString(@"\:mm\:ss");
+                        Labels[item.index].Text = (int)Nokori[item.index].TotalHours + Nokori[item.index].ToString(@"\:mm\:ss");
                     else
-                        DockTimeLabel[item.index].Text = "0" + (int)Nokori[item.index].TotalHours + Nokori[item.index].ToString(@"\:mm\:ss");
+                        Labels[item.index].Text = "0" + (int)Nokori[item.index].TotalHours + Nokori[item.index].ToString(@"\:mm\:ss");
                 }
             }
+
+            this.Labels.Clear();
         }
 
     }

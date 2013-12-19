@@ -1125,7 +1125,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(39, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(9, 15);
+            this.label3.Size = new System.Drawing.Size(8, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "/";
             // 
@@ -1141,7 +1141,7 @@
             // KanmusuMax
             // 
             this.KanmusuMax.AutoSize = true;
-            this.KanmusuMax.Location = new System.Drawing.Point(54, 0);
+            this.KanmusuMax.Location = new System.Drawing.Point(53, 0);
             this.KanmusuMax.Name = "KanmusuMax";
             this.KanmusuMax.Size = new System.Drawing.Size(14, 15);
             this.KanmusuMax.TabIndex = 5;
@@ -1162,7 +1162,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.90909F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.09091F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel3.Controls.Add(this.KanmusuMax, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.KanmusuCurrent, 0, 0);
@@ -1297,7 +1297,6 @@
         private System.Windows.Forms.Label DockName2;
         private System.Windows.Forms.Label DockName1;
         private System.Windows.Forms.Label Dock3;
-        private System.Windows.Forms.Label Dock1;
         private System.Windows.Forms.Label Dock2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -1373,6 +1372,7 @@
         public System.Windows.Forms.Label Material7;
         public System.Windows.Forms.Label Material5;
         public System.Windows.Forms.Label Material6;
+        public System.Windows.Forms.Label Dock1;
     }
 }
 

@@ -19,7 +19,14 @@ namespace NayuColle
         delegate void UpdateUI();
         delegate void UpdateUI_JSON(dynamic json);
 
+
+        // ラベル格納用コレクション。Dock,Marerial,Missionのラベルを編集する際に利用
         public Collection<Label> Labels = new Collection<Label>();
+
+        //取得している艦娘のテーブル
+        DataTable Member_Ship = new DataTable();
+                
+        //取得艦娘格納用ディクショナリ
         public Dictionary<int, string> Kanmusu_Dic = new Dictionary<int, string>();
 
         Stopwatch sw1 = new Stopwatch();
@@ -40,22 +47,19 @@ namespace NayuColle
             Fiddler.FiddlerApplication.AfterSessionComplete += FiddlerApplication_AfterSessionComplete;
             Fiddler.FiddlerApplication.BeforeRequest += FiddlerApplication_BeforeRequest;
             Fiddler.FiddlerApplication.Startup(0, Fiddler.FiddlerCoreStartupFlags.Default);
+
+            //タイマーの更新間隔を1秒に
             timer1.Interval = 1000;
             timer1.Start();
-
-            this.MissionTimeLabel.Add(Mission1);
-            this.MissionTimeLabel.Add(Mission2);
-            this.MissionTimeLabel.Add(Mission3);
-
-            this.DockTimeLabel.Add(Dock1);
-            this.DockTimeLabel.Add(Dock2);
-            this.DockTimeLabel.Add(Dock3);
-            this.DockTimeLabel.Add(Dock4);
 
             for (int i = 0; i < Constants.FLEET_MAX; i++)
                 fleet[i] = new Fleet();
 
-            Init_Member_ShipTable();
+           // Init_Member_ShipTable();
+            var Member = new Edit_Ship { Ships = Member_Ship };
+            Member.Init_Member_ShipTable();
+            ds.Tables.Add(Member_Ship);
+            Member_Ship.TableName = "mem_ship";
 
             var read = new ReadFile { file = "kanmusu.csv", Dic = Kanmusu_Dic };
             read.ReadFileToDic();
@@ -133,6 +137,7 @@ namespace NayuColle
                     string str = oSession.GetResponseBodyAsString();
                     str = str.Substring(str.IndexOf("=") + 1);
                     var json = DynamicJson.Parse(str);
+                    var Member = new Edit_Ship { Ships = Member_Ship };
 
                     if (url.IndexOf("/api_get_member/basic") > 0)
                         MakeBasic(json);
@@ -165,7 +170,9 @@ namespace NayuColle
                         {
                             KanmusuCurrent.Text = loop.ToString();
                         }));
-                        Make_Member_ShipTable(ship_data);
+                        
+                        Member.Make_Member_ShipTable(ship_data);
+                       // Make_Member_ShipTable(ship_data);
                         Invoke(new UpdateUI_JSON(UpdateDeck), deck_data);
                     }
 
@@ -179,7 +186,8 @@ namespace NayuColle
                         {
                             KanmusuCurrent.Text = loop.ToString();
                         }));
-                        Make_Member_ShipTable(ship_data);
+                        Member.Make_Member_ShipTable(ship_data);
+                       // Make_Member_ShipTable(ship_data);
                         Invoke(new UpdateUI_JSON(UpdateDeck), deck_data);
                     }
 
