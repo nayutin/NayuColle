@@ -45,10 +45,6 @@ namespace NayuColle
             TimeSpan[] Nokori = new TimeSpan[Constants.FLEET_MAX - 1];
             var Now = System.DateTime.Now;
 
-            this.MissionTimeLabels.Add(Mission1);
-            this.MissionTimeLabels.Add(Mission2);
-            this.MissionTimeLabels.Add(Mission3);
-
             foreach (var item in MissionTime.Select((value, index) => new { value, index }))
             {
                 if (item.index == 0) continue;
@@ -77,7 +73,7 @@ namespace NayuColle
                 }
 
             }
-            this.MissionTimeLabels.Clear();
+
 
         }
         /// <summary>

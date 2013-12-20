@@ -20,7 +20,7 @@ namespace NayuColle
         delegate void UpdateUI_JSON(dynamic json);
 
 
-        // ラベル格納用コレクション。Dock,Marerial,Missionのラベルを編集する際に利用
+        // ラベル格納用コレクション。Marerialのラベルを編集する際に利用
         public Collection<Label> Labels = new Collection<Label>();
 
         //取得している艦娘のテーブル
@@ -51,6 +51,17 @@ namespace NayuColle
             //タイマーの更新間隔を1秒に
             timer1.Interval = 1000;
             timer1.Start();
+
+            //ラベルの格納 Main_Deckport.csで定義
+            this.MissionTimeLabels.Add(Mission1);
+            this.MissionTimeLabels.Add(Mission2);
+            this.MissionTimeLabels.Add(Mission3);
+
+            //ラベルの格納 Main_Dock.csで定義
+            this.DockTimeLabels.Add(Dock1);
+            this.DockTimeLabels.Add(Dock2);
+            this.DockTimeLabels.Add(Dock3);
+            this.DockTimeLabels.Add(Dock4);
 
             for (int i = 0; i < Constants.FLEET_MAX; i++)
                 fleet[i] = new Fleet();

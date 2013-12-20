@@ -24,10 +24,7 @@ namespace NayuColle
 
         void UpdateDock()
         {
-            this.DockTimeLabels.Add(Dock1);
-            this.DockTimeLabels.Add(Dock2);
-            this.DockTimeLabels.Add(Dock3);
-            this.DockTimeLabels.Add(Dock4);
+
 
             TimeSpan[] Nokori = new TimeSpan[Constants.DOCK_MAX];
 
@@ -49,7 +46,6 @@ namespace NayuColle
                 }
             }
 
-            this.DockTimeLabels.Clear();
         }
 
     }
